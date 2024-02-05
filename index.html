@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de cadastro</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <form id='loginForm' onsubmit="return submitForm()">
+        <h3>Login</h3>
+        <input id="email" type="text" name="email" placeholder="Seu email..."/>
+        <input id= "password" type="password" name="senha" placeholder="Sua senha..."/>
+        <input type="submit" name="acao" value="Enviar"/>
+    </form>
+    <script>
+        var email = document.getElementById('email');
+        email.addEventListener('focus', ()=>{
+                email.style.borderColor = "#4a5f6a";
+        });
+        email.addEventListener('blur', ()=>{
+                email.style.borderColor = "#ccc";
+        });
+        var password = document.getElementById('password');
+        password.addEventListener('focus', ()=>{
+                password.style.borderColor = "#4a5f6a";
+        });
+        password.addEventListener('blur', ()=>{
+                password.style.borderColor = "#ccc";
+        });
+        function submitForm() {
+            if(email.value.trim()!=='' && password.value.trim() !==''){
+                window.location.href = 'index2.html';
+                return false;
+            } else{
+                alert('Por favor preencha todos os campos.')
+                return true
+            }
+        }
+        
+    </script>
+</body>
+</html>
